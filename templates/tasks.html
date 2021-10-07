@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <h3 class="light-blue-text text-darken-2 center-align">
+        All {{ session["user"] }}'s Tasks
+    </h3>
+
     <ul class="collapsible">
         {% for task in tasks %}
         <li>
@@ -13,9 +17,10 @@
                 {% endif %}
             </div>
             <div class="collapsible-body">
-                <strong>Category:</strong> {{ task.category_name }}
                 
                 <p><strong>Description:</strong><br>{{ task.task_description}}</p>
+                <strong>Category:</strong> {{ task.category_name }}
+                <p><em>by: {{ task.created_by }}</em></p>
             </div>
         </li>
         {% endfor %}
