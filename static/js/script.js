@@ -1,14 +1,15 @@
-// Function for mobile view dropdown to work
-$(document).ready(function(){
-    $('.sidenav').sidenav({edge: "right"});
-  });
-
-// Function for collapsible Materialize accordion
-$(document).ready(function(){
-  $('.collapsible').collapsible();
-});
-
-// Function for tooltip for urgent icon
-$(document).ready(function(){
-  $('.tooltipped').tooltip();
+$(document).ready(function () {
+    $('.sidenav').sidenav({
+        edge: "right"
+    });
+    $('.collapsible').collapsible();
+    $('.tooltipped').tooltip();
+    $('.datepicker').datepicker({
+        format: "dd mmmm, yyyy",
+        yearRange: 3,
+        showClearBtn: true,
+        i18n: {
+            done: "Select"
+        }
+    });
 });
