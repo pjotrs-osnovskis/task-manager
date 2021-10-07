@@ -4,6 +4,11 @@ $(document).ready(function(){
   });
 
 // Function for collapsible Materialize accordion
-  $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
+
+// Function for tooltip for urgent icon
+$(document).ready(function(){
+  $('.tooltipped').tooltip();
+});
