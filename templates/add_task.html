@@ -54,8 +54,11 @@
                 </div>
             </div>
             <!-- submit button -->
-            <div class="row">
-                <button type="submit" class="col l4 s12 offset-l4 btn-large light-blue lighten-2 text-shadow">
+            <div class="row center-align">
+                <a href="{{ url_for('get_tasks') }}" class="btn-large red lighten-2 text-shadow">
+                    Cancel <i class="fas fa-times-circle right" aria-hidden="true"></i>
+                </a>
+                <button type="submit" class="btn-large light-blue lighten-2 text-shadow">
                     Add Task <i class="fas fa-plus-square right"></i>
                 </button>
                 </div>
