@@ -7,6 +7,15 @@
     line-height: 2;
 }
 
+.btn-small{
+    margin: 5px;
+}
+
+.collapsible-header .col strong{
+    margin: 5px;
+    line-height: 42px;
+}
+
 @media only screen and (min-width: 600px) {
     .brand-logo{
         margin-left: 1rem;
