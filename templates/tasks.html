@@ -1,35 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-2 center-align">
-        All {{ session["user"] }}'s Tasks
-    </h3>
+        <h3 class="light-blue-text text-darken-2 center-align">
+            All {{ session["user"] }}'s Tasks
+        </h3>
 
-    <ul class="collapsible">
-        {% for task in tasks %}
-        <li>
-            <div class="collapsible-header white-text light-blue lighten-2 text-shadow">
-                <div class="col s3">
-                    <i class="fa fa-caret-down"></i>
-                    <a class="btn-small green lighten-2">Done</a>
-                    <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small light-blue">Edit</a>
+        <ul class="collapsible">
+            {% for task in tasks %}
+            <li>
+                <div class="collapsible-header white-text light-blue lighten-2 text-shadow">
+                    <div class="col s3">
+                            <i class="fa fa-caret-down"></i>
+                                <a class="btn-small green lighten-2">Done</a>
+                                <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small light-blue">Edit</a>
+                    </div>
+                    <div class="col s9">
+                        <strong>{{ task.task_name }}</strong>: {{ task.due_date }}
+                        {% if task.is_urgent == "on" %}
+                            <i class="fas fa-exclamation-circle light-blue-text text-lighten-4 tooltipped" 
+                            data-position="right" data-tooltip="Urgent!" aria-hidden="true"></i>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="col s9">
-                    <strong>{{ task.task_name }}</strong>: {{ task.due_date }}
-                    {% if task.is_urgent == "on" %}
-                        <i class="fas fa-exclamation-circle light-blue-text text-lighten-4 tooltipped" 
-                        data-position="right" data-tooltip="Urgent!" aria-hidden="true"></i>
-                    {% endif %}
+                <div class="collapsible-body">
+                    
+                    <p><strong>Description:</strong><br>{{ task.task_description}}</p>
+                    <strong>Category:</strong> {{ task.category_name }}
+                    <p><em>by: {{ task.created_by }}</em></p>
                 </div>
-            </div>
-            <div class="collapsible-body">
-                
-                <p><strong>Description:</strong><br>{{ task.task_description}}</p>
-                <strong>Category:</strong> {{ task.category_name }}
-                <p><em>by: {{ task.created_by }}</em></p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
+            </li>
+            {% endfor %}
+        </ul>
 
 {% endblock %}
